@@ -1,23 +1,30 @@
 import { Box, CardContent, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
-import React from "react";
+import React, { useState } from "react";
 import { MatchCard } from "../../types/matchTypes";
 
 const MatchCard: React.FC<MatchCard> = ({ point, image }) => {
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const cardBackImage = "";
+
   const cardImage = (
     <Box>
-      <img src={image} />
+      <img src={isFlipped ? image : cardBackImage} />
     </Box>
   );
 
   const cardContent = (
     <CardContent>
       <div>{cardImage}</div>
-      <Typography>Points: {point}</Typography>
+      {isFlipped ? <Typography>Points: {point}</Typography> : null}
     </CardContent>
   );
 
-  return <Card>{cardContent}</Card>;
+  return (
+    <Box onClick={() => setIsFlipped(true)}>
+      <Card>{cardContent}</Card>
+    </Box>
+  );
 };
 
 export default MatchCard;

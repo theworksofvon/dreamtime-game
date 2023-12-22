@@ -3,7 +3,6 @@ export interface MatchCard {
   placement: number;
   point: number;
   image: string;
-  reveal: () => void;
 }
 
 export type MatchCardArray = MatchCard[];
