@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React from "react";
 import { MatchBoard, MatchCardArray } from "../../types/matchTypes";
 
 const MatchBoard: React.FC<MatchBoard> = ({ level, matchCards }) => {

@@ -1,6 +1,6 @@
 import { Box, CardContent, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
-import React, { useState } from "react";
+import { useState } from "react";
 import { MatchCard } from "../../types/matchTypes";
 
 const MatchCard: React.FC<MatchCard> = ({ point, image }) => {
