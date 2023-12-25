@@ -7,13 +7,15 @@ export interface MatchCard {
 
 export type MatchCardArray = MatchCard[];
 
-export interface MatchBoard {
+export interface MatchBoardType {
   level: Difficulty;
   matchCards: MatchCardArray;
 }
 
+export type Difficulties = "normal" | "medium" | "hard";
+
 export type Difficulty = {
-  difficulty: string;
+  difficulty: Difficulties;
   spots: number;
   timer: number;
 };

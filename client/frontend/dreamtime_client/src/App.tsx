@@ -1,15 +1,9 @@
-// import Menu from "./components/Menu";
-// import TopNav from "./components/TopNav";
-
-import MatchBoard from "./components/MatchBoard/matchBoard";
+import Homepage from "./components/Homepage/Homepage";
 
 function App() {
   return (
     <>
-      {/* <Menu />
-      <TopNav /> */}
-
-      <MatchBoard />
+      <Homepage />
     </>
   );
 }
