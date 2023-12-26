@@ -12,7 +12,19 @@ export interface MatchBoardType {
   matchCards: MatchCardArray;
 }
 
-export type Difficulties = "normal" | "medium" | "hard";
+export enum Difficulties {
+  REGULAR = "regular",
+  EXPERT = "expert",
+  INSANE = "insane",
+}
+
+export enum GameStatus {
+  STARTED = "started",
+  ONGOING = "ongoing",
+  FINISHED = "finished",
+  WAITING = "waiting",
+  LOADING = "loading",
+}
 
 export type Difficulty = {
   difficulty: Difficulties;

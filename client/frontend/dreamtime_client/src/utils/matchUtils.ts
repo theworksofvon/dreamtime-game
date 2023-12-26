@@ -1,18 +1,18 @@
-import { DifficultyArray } from "../types/matchTypes";
+import { Difficulties, DifficultyArray } from "../types/matchTypes";
 
 export const DIFFICULTIES: DifficultyArray = [
   {
-    difficulty: "normal",
+    difficulty: Difficulties.REGULAR,
     spots: 15,
     timer: 30,
   },
   {
-    difficulty: "medium",
+    difficulty: Difficulties.EXPERT,
     spots: 30,
     timer: 20,
   },
   {
-    difficulty: "hard",
+    difficulty: Difficulties.INSANE,
     spots: 50,
     timer: 10,
   },

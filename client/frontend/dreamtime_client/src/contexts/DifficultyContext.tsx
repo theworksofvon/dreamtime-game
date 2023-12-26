@@ -1,19 +1,26 @@
-import { useState, createContext, useContext } from "react";
+import React, { useState, createContext, ReactNode } from "react";
+import { Difficulties } from "../types/matchTypes";
 
-export const DifficultyContext = createContext({
-  difficulty: "normal",
-  setDifficulty: () => "normal",
+type DifficultyContextType = {
+  difficulty: string;
+  setDifficulty: React.Dispatch<React.SetStateAction<Difficulties>>;
+};
+
+export const DifficultyContext = createContext<DifficultyContextType>({
+  difficulty: Difficulties.REGULAR,
+  setDifficulty: () => {},
 });
 
-export const DifficultyProvider = ({ children }) => {
-  const [difficulty, setDifficulty] = useState("normal");
-
+export const DifficultyProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [difficulty, setDifficulty] = useState<Difficulties>(
+    Difficulties.REGULAR
+  );
+  console.log({ difficulty });
   return (
     <DifficultyContext.Provider value={{ difficulty, setDifficulty }}>
       {children}
     </DifficultyContext.Provider>
   );
 };
-
-// Custom hook for easy access to the context
-export const useDifficulty = () => useContext(DifficultyContext);
