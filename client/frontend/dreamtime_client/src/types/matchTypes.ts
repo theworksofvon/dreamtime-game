@@ -3,18 +3,31 @@ export interface MatchCard {
   placement: number;
   point: number;
   image: string;
-  reveal: () => void;
 }
 
 export type MatchCardArray = MatchCard[];
 
-export interface MatchBoard {
+export interface MatchBoardType {
   level: Difficulty;
   matchCards: MatchCardArray;
 }
 
+export enum Difficulties {
+  REGULAR = "regular",
+  EXPERT = "expert",
+  INSANE = "insane",
+}
+
+export enum GameStatus {
+  STARTED = "started",
+  ONGOING = "ongoing",
+  FINISHED = "finished",
+  WAITING = "waiting",
+  LOADING = "loading",
+}
+
 export type Difficulty = {
-  difficulty: string;
+  difficulty: Difficulties;
   spots: number;
   timer: number;
 };
